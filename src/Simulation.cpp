@@ -74,61 +74,16 @@ Aircraft* Simulation::CreateAircraft(float value)
 	*/
 }
 
-auto Simulation::GetShortestChargerQueue()
-{
-	return std::min_element(m_Chargers.begin(), m_Chargers.end());
-}
-
-bool Simulation::IsAtCharger(Aircraft* aircraft)
-{
-	auto iter = Charger::m_AircraftsAtChargers.find(aircraft);
-
-	if (iter == Charger::m_AircraftsAtChargers.end())
-	{
-		return false;
-	}
-
-	return true;
-}
-
 void Simulation::Run()
 {
 	std::cout << "Begining Simulation!" << std::endl;
 
 	while (m_Runtime < m_Duration)
 	{
-
 		UpdateAircraftStates();
 		UpdateChargers();
 		UpdateAircraftData();
 
-		/*
-		Aircraft* currentAircraft = nullptr;
-
-		for(int i = 0; i < m_Aircrafts.size(); ++i)
-		{
-			currentAircraft = m_Aircrafts[i];
-
-			if (currentAircraft->IsBatteryDead() && !IsAtCharger(currentAircraft))
-			{
-				std::cout << "Going to charger..." << std::endl;
-
-				Charger::m_AircraftsAtChargers.insert(currentAircraft);
-				GetShortestChargerQueue()->AddToQueue(currentAircraft);
-				currentAircraft->SetWaitingStatus(true);
-			}
-
-			else
-			{
-				currentAircraft->Update();
-			}
-		}
-
-		for(int i = 0; i < m_Chargers.size(); ++i)
-		{
-			m_Chargers[i].Update();
-		}
-		*/
 		++m_Runtime;
 	}
 }

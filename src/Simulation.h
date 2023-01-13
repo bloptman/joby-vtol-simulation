@@ -20,9 +20,6 @@ public:
 	// Creates an Aircraft depending on the provided value.
 	Aircraft* CreateAircraft(float value);
 
-	auto GetShortestChargerQueue();
-	bool IsAtCharger(Aircraft* aircraft);
-
 	// Runs the simulation until completion.
 	void Run();
 
