@@ -44,8 +44,6 @@ void Simulation::PopulateAircrafts(int numberOfAircrafts)
 
 Aircraft* Simulation::CreateAircraft(float value)
 {
-	return new Testing();
-	/*
 	if (0.0f <= value && value < 0.2f)
 	{
 		//std::cout << "Creating Alpha" << std::endl;
@@ -71,7 +69,6 @@ Aircraft* Simulation::CreateAircraft(float value)
 		//std::cout << "Creating Echo" << std::endl;
 		return new Echo();
 	}
-	*/
 }
 
 void Simulation::Run()
@@ -131,15 +128,12 @@ void Simulation::OutputResults(std::string fileName)
 	std::cout << "Outputting results to " << fileName << "!" << std::endl;
 
 	std::ofstream outputFile(fileName);
-
-	/*for (auto aircraft : m_PossibleAircrafts)
+	
+	for (auto aircraft : m_PossibleAircrafts)
 	{
 		aircraft->OutputResult(outputFile);
 	}
-	*/
 
-	Aircraft* t = new Testing();
-	t->OutputResult(outputFile);
 	outputFile.close();
 }
 
