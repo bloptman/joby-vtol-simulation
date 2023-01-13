@@ -1,8 +1,6 @@
 #include "Charger.h"
 #include "Aircraft.h"
 
-std::set<Aircraft*> Charger::m_AircraftsAtChargers;
-
 Charger::Charger()
 {
 	// Empty
@@ -21,47 +19,11 @@ void Charger::Update()
 	{
 		m_ChargingQueue.pop();
 	}
-
-	/*
-	if (m_ChargingQueue.empty())
-	{
-		std::cout << "Charge is empty!" << std::endl;
-		return;
-	}
-
-	else if (m_ChargingQueue.front()->IsBatteryFull())
-	{
-		std::cout << "Battery Full!" << std::endl;
-
-		m_AircraftsAtChargers.erase(m_ChargingQueue.front());
-		m_ChargingQueue.front()->SetChargingStatus(false);
-		m_ChargingQueue.pop();
-
-		if (!m_ChargingQueue.empty())
-		{
-			m_ChargingQueue.front()->SetChargingStatus(true);
-			m_ChargingQueue.front()->SetWaitingStatus(false);
-		}
-
-		return;
-	}
-
-	m_ChargingQueue.front()->SetChargingStatus(true);
-	m_ChargingQueue.front()->SetWaitingStatus(false);
-
-	ChargeBattery(m_ChargingQueue.front());
-	*/
 }
 
 void Charger::AddToQueue(Aircraft* aircraft)
 {
 	m_ChargingQueue.push(aircraft);
-	//aircraft->SetWaitingStatus(true);
-}
-
-void Charger::ChargeBattery(Aircraft* aircraft)
-{
-	aircraft->ChargeBattery();
 }
 
 int Charger::GetQueueSize() const

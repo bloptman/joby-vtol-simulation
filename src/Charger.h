@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-#include <set>
 #include <queue>
 
 class Aircraft;
@@ -13,11 +12,8 @@ public:
 	Charger();
 	void Update();
 	void AddToQueue(Aircraft* aircraft);
-	void ChargeBattery(Aircraft* aircraft);
 
 	int GetQueueSize() const;
-
-	static std::set<Aircraft*> m_AircraftsAtChargers;
 
 	friend std::ostream& operator<<(std::ostream& os, const Charger& charger);
 
