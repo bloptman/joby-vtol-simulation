@@ -24,8 +24,6 @@ public:
 	virtual void OutputResult(std::ofstream& file) = 0;
 
 	// Battery Managment Functions
-	void ChargeBattery();
-	void DischargeBattery();
 	bool IsBatteryFull() const;
 	bool IsBatteryDead() const;
 
@@ -34,14 +32,7 @@ public:
 	void Wait();
 	void Fly();
 
-
 	void CheckForFault(float value);
-
-	bool IsCharging() const;
-	bool IsWaiting() const;
-
-	void SetChargingStatus(bool status);
-	void SetWaitingStatus(bool status);
 
 	AircraftState GetState() const;
 	void SetState(AircraftState newState);
