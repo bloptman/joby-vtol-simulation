@@ -26,6 +26,7 @@ enum class AircraftState
 	CHARGING,
 	FLYING
 };
+
 // Conversion factors for common units of time.
 namespace Time
 {

@@ -23,10 +23,8 @@ float ConvertProbability(float probabilityPerHour);
 // corresponding values per second.
 AircraftParameters ConvertParametersToSeconds(AircraftParameters parameters);
 
-std::ostream& operator<<(std::ostream& os, const AircraftMetrics& metrics);
-
 // Operators to help calculat the final results:
-
+std::ostream& operator<<(std::ostream& os, const AircraftMetrics& metrics);
 AircraftMetrics operator+(const AircraftMetrics& lhs, const AircraftMetrics& rhs);
 AircraftMetrics operator/(const AircraftMetrics& metrics, int c);
 
