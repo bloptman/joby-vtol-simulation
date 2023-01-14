@@ -5,6 +5,10 @@
 #include "AircraftDataStructs.h"
 #include "Utility.h"
 
+// Could not find identifier for this function for some reason.
+// Requires further investigation.
+AircraftParameters ConvertParametersToSeconds(AircraftParameters parameters);
+
 class Aircraft;
 
 const int NUMBER_OF_AIRCRAFT_TYPES = 5;
