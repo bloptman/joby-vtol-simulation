@@ -16,18 +16,20 @@ public:
 
 	virtual void CalculateTotalMetrics();
 	virtual void CalculateAverageMetrics();
-	virtual void OutputResult(std::ofstream& file) = 0;
+	virtual void OutputResult(std::ofstream& file);
 
-	int GetNumberOfInstances() const;
-	AircraftMetrics GetTotalMetrics() const;
+	static int GetNumberOfInstances();
+	static AircraftMetrics GetTotalMetrics();
 
 protected:
 	static int m_Instances;
 	static AircraftMetrics m_TotalMetrics;
 };
 
+// Start at -1 to account for the additional instance of the Aircraft type being 
+// created to loop over all possible Aircraft types.
 template <class X>
-int AircraftX<X>::m_Instances = 0;
+int AircraftX<X>::m_Instances = -1;
 
 template <class X>
 AircraftMetrics AircraftX<X>::m_TotalMetrics = AircraftMetrics();
@@ -47,26 +49,31 @@ void AircraftX<X>::CalculateTotalMetrics()
 template <class X>
 void AircraftX<X>::CalculateAverageMetrics()
 {
-	m_TotalMetrics = m_TotalMetrics / m_Instances;
+	// If there are no instances of the class then calculating the average
+	// does not make sense (division by zero).
+	if (m_Instances > 0)
+	{
+		m_TotalMetrics = m_TotalMetrics / m_Instances;
+	}
 }
 
-/*
+
 template <class X>
 void AircraftX<X>::OutputResult(std::ofstream& file)
 {
 	file << typeid(X).name() << " Results: " << std::endl;
+	file << "Total Instances: " << m_Instances << std::endl;
 	file << m_TotalMetrics << std::endl;
 }
-*/
 
 template <class X>
-int AircraftX<X>::GetNumberOfInstances() const
+int AircraftX<X>::GetNumberOfInstances()
 {
 	return m_Instances;
 }
 
 template <class X>
-AircraftMetrics AircraftX<X>::GetTotalMetrics() const
+AircraftMetrics AircraftX<X>::GetTotalMetrics()
 {
 	return m_TotalMetrics;
 }
