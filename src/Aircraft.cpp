@@ -81,7 +81,6 @@ void Aircraft::UpdateState(std::vector<Charger>& chargers)
 bool Aircraft::IsBatteryFull() const
 {
 	return m_Battery.IsFull();
-	//return m_BatteryCharge == m_Parameters.m_batteryCapacity;
 }
 
 bool Aircraft::IsBatteryDead() const
