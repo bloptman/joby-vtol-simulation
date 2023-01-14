@@ -1,5 +1,5 @@
 #ifndef UTILITY_H
-#define UTILIT_H
+#define UTILITY_H
 
 #include <iostream>
 #include "Constants.h"
