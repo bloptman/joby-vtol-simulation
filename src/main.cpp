@@ -1,9 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Simulation.h"
-#include "DeriviedAircraft.h"
-#include "Utility.h"
-#include "Battery.h"
 
 int main()
 {
