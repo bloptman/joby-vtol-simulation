@@ -45,11 +45,11 @@ AircraftParameters ConvertParametersToSeconds(AircraftParameters parameters)
 
 std::ostream& operator<<(std::ostream& os, const AircraftMetrics& metrics)
 {
-	os << "Distance Traveled: " << metrics.m_TotalDistanceTraveled << " miles"   << std::endl;
-	os << "Time in Flight: "    << metrics.m_TimeInFlight          << " seconds" << std::endl;
-	os << "Time Waiting: "      << metrics.m_TimeWaiting           << " seconds" << std::endl;
-	os << "Time Charging: "     << metrics.m_TimeCharing           << " seconds" << std::endl;
-	os << "Number of Faults: "  << metrics.m_NumberOfFaults        << std::endl;
+	os << "Distance Traveled: "     << metrics.m_TotalDistanceTraveled << " miles"   << std::endl;
+	os << "Time in Flight: "        << metrics.m_TimeInFlight          << " seconds" << std::endl;
+	os << "Time Waiting: "          << metrics.m_TimeWaiting           << " seconds" << std::endl;
+	os << "Time Charging: "         << metrics.m_TimeCharing           << " seconds" << std::endl;
+	os << "Max Number of Faults: "  << metrics.m_NumberOfFaults        << std::endl;
 
 	return os;
 }
