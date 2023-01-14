@@ -61,9 +61,9 @@ AircraftMetrics operator+(const AircraftMetrics& lhs, const AircraftMetrics& rhs
 	AircraftMetrics result;
 
 	result.m_TotalDistanceTraveled = lhs.m_TotalDistanceTraveled + rhs.m_TotalDistanceTraveled;
-	result.m_TimeInFlight = lhs.m_TimeInFlight + rhs.m_TimeInFlight;
-	result.m_TimeWaiting = lhs.m_TimeWaiting + rhs.m_TimeWaiting;
-	result.m_TimeCharing = lhs.m_TimeCharing + rhs.m_TimeCharing;
+	result.m_TimeInFlight =  lhs.m_TimeInFlight + rhs.m_TimeInFlight;
+	result.m_TimeWaiting  =  lhs.m_TimeWaiting  + rhs.m_TimeWaiting;
+	result.m_TimeCharing  =  lhs.m_TimeCharing  + rhs.m_TimeCharing;
 	result.m_NumberOfFaults = std::max(lhs.m_NumberOfFaults, rhs.m_NumberOfFaults);
 
 	return result;
@@ -77,6 +77,7 @@ AircraftMetrics operator/(const AircraftMetrics& metrics, int c)
 	result.m_TimeInFlight = metrics.m_TimeInFlight / c;
 	result.m_TimeWaiting = metrics.m_TimeWaiting / c;
 	result.m_TimeCharing = metrics.m_TimeCharing / c;
+	result.m_NumberOfFaults = metrics.m_NumberOfFaults;
 
 	return result;
 }
