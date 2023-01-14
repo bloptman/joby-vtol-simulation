@@ -1,9 +1,7 @@
 #ifndef DERIVED_AIRCRAFTS_H
 #define DERIVED_AIRCRAFTS_H
 
-#include "Aircraft.h"
 #include "AircraftX.h"
-#include "AircraftDataStructs.h"
 #include "Constants.h"
 
 // Derivied Aircraft Types:
@@ -15,8 +13,6 @@ public:
 	{
 		// Empty
 	}
-
-	virtual void OutputResult(std::ofstream& file);
 };
 
 class Beta : public AircraftX<Beta>
@@ -26,7 +22,6 @@ public:
 	{
 		// Empty
 	}
-	virtual void OutputResult(std::ofstream& file);
 };
 
 class Charlie : public AircraftX<Charlie>
@@ -36,7 +31,6 @@ public:
 	{
 		// Empty
 	}
-	virtual void OutputResult(std::ofstream& file);
 };
 
 class Delta : public AircraftX<Delta>
@@ -46,7 +40,6 @@ public:
 	{
 		// Empty
 	}
-	virtual void OutputResult(std::ofstream& file);
 };
 
 class Echo : public AircraftX<Echo>
@@ -56,7 +49,6 @@ public:
 	{
 		// Empty
 	}
-	virtual void OutputResult(std::ofstream& file);
 };
 
 class Testing : public AircraftX<Testing>
@@ -66,7 +58,6 @@ public:
 	{
 		// Empty
 	}
-	virtual void OutputResult(std::ofstream& file);
 };
 
 #endif // DERIVED_AIRCRAFTS_H
