@@ -19,6 +19,9 @@ float CalculateAverageValue(float val, int n);
 // to the probability of the event occuring per second.
 float ConvertProbability(float probabilityPerHour);
 
+// Computes the nth root of value.
+float Root(float value, float n);
+
 // Converts the the members of an AircraftParameters object to the their
 // corresponding values per second.
 AircraftParameters ConvertParametersToSeconds(AircraftParameters parameters);

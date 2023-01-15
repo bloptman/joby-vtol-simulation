@@ -1,4 +1,5 @@
 #include <random>
+#include <cmath>
 #include "Utility.h"
 
 float GetRandomNumber(float min = 0.0f, float max = 1.0f)
@@ -22,8 +23,19 @@ float CalculateAverageValue(float value, int n)
 
 float ConvertProbability(float probabilityPerHour)
 {
-	// TODO
-	return probabilityPerHour / Time::SecondsInHour;
+	// This conversion assumes each fault is an independent event.
+	// Derivation of conversion here: https://math.stackexchange.com/questions/357242/calculating-probabilities-over-different-time-intervals
+
+	float convertedProb = -1.0f * (probabilityPerHour - 1.0f);
+	convertedProb = Root(convertedProb, Time::SecondsInHour);
+	convertedProb = 1 - convertedProb;
+
+	return convertedProb;
+}
+
+float Root(float value, float n)
+{
+	return std::pow(value, 1.0f / n);
 }
 
 AircraftParameters ConvertParametersToSeconds(AircraftParameters parameters)
