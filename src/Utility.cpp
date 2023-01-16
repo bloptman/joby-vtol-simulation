@@ -66,7 +66,7 @@ std::ostream& operator<<(std::ostream& os, const AircraftMetrics& metrics)
 	return os;
 }
 
-// Operators to help calculat the final results:
+// Operators to help calculate the final results:
 
 AircraftMetrics operator+(const AircraftMetrics& lhs, const AircraftMetrics& rhs)
 {
