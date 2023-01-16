@@ -86,3 +86,67 @@ TEST(UtilityTests, Root)
 	
 	EXPECT_FLOAT_EQ(Root(value, n), std::sqrt(value));
 }
+
+TEST(UtilityTests, AdditionOperator)
+{
+	AircraftMetrics m1;
+	AircraftMetrics m2;
+
+	float distance1 = 1.0f;
+	float flight1   = 1.0f;
+	float waiting1  = 1.0f;
+	float charging1 = 1.0f;
+	int faults1     = 1;
+
+	float distance2 = 2.0f;
+	float flight2   = 2.0f;
+	float waiting2  = 2.0f;
+	float charging2 = 2.0f;
+	int faults2     = 2;
+
+	m1.m_TotalDistanceTraveled = distance1;
+	m1.m_TimeInFlight          = flight1;
+	m1.m_TimeWaiting           = waiting1;
+	m1.m_TimeCharing           = charging1;
+	m1.m_NumberOfFaults        = faults1;
+
+	m2.m_TotalDistanceTraveled = distance2;
+	m2.m_TimeInFlight          = flight2;
+	m2.m_TimeWaiting           = waiting2;
+	m2.m_TimeCharing           = charging2;
+	m2.m_NumberOfFaults        = faults2;
+
+	AircraftMetrics result = m1 + m2;
+
+	EXPECT_FLOAT_EQ(result.m_TotalDistanceTraveled, distance1 + distance2);
+	EXPECT_FLOAT_EQ(result.m_TimeInFlight, flight1 + flight2);
+	EXPECT_FLOAT_EQ(result.m_TimeWaiting, waiting1 + waiting2);
+	EXPECT_FLOAT_EQ(result.m_TimeCharing, charging1 + charging2);
+	EXPECT_EQ      (result.m_NumberOfFaults, std::max(faults1, faults2));
+}
+
+TEST(UtilityTests, DivisionOperator)
+{
+	AircraftMetrics metrics;
+	int n = 10;
+
+	float distance = 10.0f;
+	float flight   = 10.0f;
+	float waiting  = 10.0f;
+	float charging = 10.0f;
+	int faults     = 10;
+
+	metrics.m_TotalDistanceTraveled = distance;
+	metrics.m_TimeInFlight = flight;
+	metrics.m_TimeWaiting = waiting;
+	metrics.m_TimeCharing = charging;
+	metrics.m_NumberOfFaults = faults;
+
+	AircraftMetrics result = metrics / n;
+
+	EXPECT_FLOAT_EQ(result.m_TotalDistanceTraveled, distance / n);
+	EXPECT_FLOAT_EQ(result.m_TimeInFlight, flight / n);
+	EXPECT_FLOAT_EQ(result.m_TimeWaiting, waiting / n);
+	EXPECT_FLOAT_EQ(result.m_TimeCharing, charging / n);
+	EXPECT_EQ      (result.m_NumberOfFaults, faults);
+}
