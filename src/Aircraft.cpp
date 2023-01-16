@@ -10,6 +10,11 @@ Aircraft::Aircraft(const AircraftParameters& parameters) :
 	m_BatteryCharge = parameters.m_batteryCapacity;
 }
 
+Aircraft::~Aircraft()
+{
+	// Empty
+}
+
 void Aircraft::Update()
 {
 	// How the Aircraft is updated depends on what state it is in: 

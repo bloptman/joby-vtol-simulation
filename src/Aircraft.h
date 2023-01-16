@@ -13,6 +13,7 @@ class Aircraft
 {
 public:
 	Aircraft(const AircraftParameters& parameters);
+	virtual ~Aircraft();
 
 	// Update Functions
 	virtual void Update();

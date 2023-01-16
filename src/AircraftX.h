@@ -11,6 +11,7 @@ class AircraftX: public Aircraft
 {
 public:
 	AircraftX(const AircraftParameters& params);
+	virtual ~AircraftX();
 
 	//virtual void Update();
 
@@ -38,6 +39,12 @@ template <class X>
 AircraftX<X>::AircraftX(const AircraftParameters& params) : Aircraft(params)
 {
 	++m_Instances;
+}
+
+template<class X>
+AircraftX<X>::~AircraftX()
+{
+	--m_Instances;
 }
 
 template <class X>
