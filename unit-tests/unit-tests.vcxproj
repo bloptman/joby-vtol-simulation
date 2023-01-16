@@ -32,6 +32,22 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)</OutDir>
+    <IntDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)/intermediates</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)</OutDir>
+    <IntDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)/intermediates</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)</OutDir>
+    <IntDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)/intermediates</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)</OutDir>
+    <IntDir>../bin/$(ProjectName)/$(PlatformTarget)/$(Configuration)/intermediates</IntDir>
+  </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
   </ItemGroup>
