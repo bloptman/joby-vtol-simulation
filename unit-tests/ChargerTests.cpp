@@ -1,6 +1,6 @@
 #include "pch.h"
 
-TEST(ChargingTests, Update)
+TEST(ChargerTests, Update)
 {
 	Charger c;                                                  
 	Testing t;
