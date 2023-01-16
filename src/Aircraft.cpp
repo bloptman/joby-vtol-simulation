@@ -101,6 +101,11 @@ AircraftParameters Aircraft::GetParameters() const
 	return m_Parameters;
 }
 
+AircraftMetrics Aircraft::GetMetrics() const
+{
+	return m_Metrics;
+}
+
 std::ostream& operator<<(std::ostream& os, const Aircraft& aircraft)
 {
 	os << "Battery Charge: "   << aircraft.m_Battery.GetChargeLevel()        << std::endl;

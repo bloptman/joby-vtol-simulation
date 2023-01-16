@@ -38,6 +38,7 @@ public:
 	void SetState(AircraftState newState);
 
 	AircraftParameters GetParameters() const;
+	AircraftMetrics    GetMetrics()    const;
 
 protected:
 	AircraftMetrics m_Metrics;
